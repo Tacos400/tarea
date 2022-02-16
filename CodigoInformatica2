@@ -1,0 +1,17 @@
+function Superama(origin,destination) { //En donde dice Superama van a cambiarlo por lo que sea, OJO, no se puede repetir el mismo nombre en el archivo.
+  origin = "Av. del Servidor Público, Poniente, 45136 Zapopan, Jal." // Aqui ponen su direccion inicial.
+  destination = "Superama Valle Real, Av Sta Margarita 4000, Poniente, 45136 Zapopan, Jal." // aqui el destino.
+  Logger.log(origin);
+  Logger.log(destination)
+  
+  var directions = Maps.newDirectionFinder()
+ .setOrigin(origin)
+ .setDestination(destination)
+ .getDirections();
+ 
+  Logger.log(directions.routes[0].legs[0].distance.value);
+  var km = directions.routes[0].legs[0].distance.value;
+  var meters = km /1000;
+  Logger.log(meters);
+  return meters;
+ }
